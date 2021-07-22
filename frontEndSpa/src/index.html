@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./css/style.css" class="stylesheet" />
+    <link rel="stylesheet" href="./css/layout.css" class="stylesheet" />
+    <link rel="stylesheet" href="./css/flippyCards.css" class="stylesheet" />
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/xicon">
+    <link rel="stylesheet" href="./css/autoComplete.css" class="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taste Buds</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="dropdown ">
+                <button class="dropbtn nav">Meet the Team
+                    <i class="caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="https://mdagebo.github.io/" target="_blank" rel="noopener noreferrer">Mulat Dagebo</a>
+                    <a href="https://dgranados515.github.io" target="_blank" rel="noopener noreferrer">David Granados</a>
+                    <a href="https://mcclaineabigail.github.io/" target="_blank" rel="noopener noreferrer">Abigail McClaine</a>
+                    <a href="https://levischroeder.com" target="_blank" rel="noopener noreferrer">Levi Schroeder</a>
+                    <a href="https://ashaw879.github.io/" target="_blank" rel="noopener noreferrer">Andrea Shaw</a>
+                    <a href="https://alysshatimm.github.io/" target="_blank" rel="noopener noreferrer">Alyssha Timm</a>
+                    <a href="https://dav-prog.github.io/" target="_blank" rel="noopener noreferrer">David Trimmer</a>
+                </div>
+            </div>
+            <h1>Taste Buds</h1>
+            <a href="blog.html"><button class="nav">Blog</button></a>
+        </header>
+        
+        <div class="search autocomplete" autocomplete="off" action="/action_page.php">
+            
+            <input type="text" id="food-search" class="food-search" placeholder="Enter an ingredient" autofocus />
+            <h3 class="search-term">Search Term Displays Here</h3>
+            <div class="buttons"></div>
+    </div>
+        <div class="suggested-pairings">
+            <h4 class="popular-pairings">Popular Pairings</h4>
+            <h2 class="legend"><span class="best">BEST - </span><span class="better">great - </span><span class="good">better - </span><span class="italics">good</span></h2>
+            <ul id="food-pairings" class="food-pairings"></ul>
+        </div>
+        <div class="flavor-affinities">
+            <h4 class="affinities-title">Flavor Affinities: Recipes & Ideas</h4>
+            <div class="flipcard-container" id="flipcard-container">
+            </div>
+        </div>
+        <footer class="footer">2020 Taste Buds</footer>
+    </div>
+</body>
+
+<script src="js/app.js" type="module"></script>
+<script src="js/autoComplete.js" type="module"></script>
+</html>

@@ -2,17 +2,20 @@ package com.tastebuds.webapp.resources;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 public class Pairing {
 
-    private String pairing;
+
+    private DietaryFilter dietaryFilter;
+    private String name;
+    private int textStyle;
+    public enum DietaryFilter {
+        SWEET, SOUR , SALTY, BITTER, UMAMI, SMOKY
+    }
     @GeneratedValue
     @Id
     private Long id;
@@ -20,16 +23,27 @@ public class Pairing {
     @JsonIgnore
     private Set<Ingredient> ingredients;
 
-    public Pairing(String pairing, Ingredient...ingredients) {
-        this.pairing = pairing;
+    public Pairing(String name, DietaryFilter dietaryFilter, int textStyle, Ingredient... ingredients) {
+        this.name = name;
+        this.textStyle = textStyle;
         this.ingredients = Set.of(ingredients);
+        this.dietaryFilter = dietaryFilter;
+
     }
 
     protected Pairing(){
     }
 
-    public String getPairing() {
-        return pairing;
+    public DietaryFilter getDietaryFilter() {
+        return dietaryFilter;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getTextStyle() {
+        return textStyle;
     }
 
     public Long getId() {
@@ -45,21 +59,22 @@ public class Pairing {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pairing pairing1 = (Pairing) o;
-        return Objects.equals(pairing, pairing1.pairing) &&
+        return textStyle == pairing1.textStyle &&
+                Objects.equals(name, pairing1.name) &&
                 Objects.equals(id, pairing1.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pairing, id);
+        return Objects.hash(name, textStyle, id);
     }
 
     @Override
     public String toString() {
         return "Pairing{" +
-                "pairing='" + pairing + '\'' +
+                ", name='" + name + '\'' +
+                ", textStyle=" + textStyle +
                 ", id=" + id +
-                ", ingredients=" + ingredients +
                 '}';
     }
 }
