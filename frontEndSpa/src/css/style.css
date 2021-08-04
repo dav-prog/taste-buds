@@ -47,7 +47,6 @@ h4 {
 }
 
 .food-search {
-    width: 95%;
     background-color: var(--white);
     border: none;
     font-size: 2em;
@@ -75,6 +74,14 @@ h4 {
 
 .italics {
     font-style: italic;
+}
+
+.food-search-button {
+    background-color: var(--white);
+    border: none;
+    font-size: 1.25em;
+    text-align: center;
+    outline: none;
 }
 
 .search-term {
@@ -209,7 +216,7 @@ a {
     color: var(--black);
 }
 
-.footer {
+footer {
     background-color: var(--black);
     color: var(--orange);
     font-weight: 600;
@@ -228,9 +235,10 @@ a:hover {
 
 header {
     font-family: 'Pacifico', cursive;
+    background-image: linear-gradient(rgba(8, 8, 8, 0.705), rgba(255, 255, 255, 0.308));
 }
 
-.header {
+header h1 {
     font-size: 8vw;
     text-align: center;
     color: var(--black);
@@ -300,6 +308,7 @@ header {
 
 /* Modals */
 
+
 .food-pairings:hover .dropdown-content {
     display: block;
 }
@@ -355,7 +364,7 @@ header {
 }
 
 .modal-list {
-    font-weight: 500;
+    font-weight: 500; 
     font-style: normal;
 }
 
@@ -377,76 +386,4 @@ header {
 
 #submit-post {
     cursor: pointer;
-}
-
-
-/* Slider */
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    left: 150%;
-}
-
-
-/* Hide default HTML checkbox */
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-
-/* The slider */
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--black);
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: var(--orange);
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked+.slider {
-    background-color: var(--white);
-}
-
-input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-
-/* Rounded sliders */
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
 }
